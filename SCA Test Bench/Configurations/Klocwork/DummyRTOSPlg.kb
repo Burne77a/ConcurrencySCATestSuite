@@ -1,0 +1,17 @@
+semaphoreCreateBinary - ACQUIRE semaphore:  1 : $$ : $$ NE(0)
+spinLockIsrCreate - ACQUIRE spinlock:  1 : $$ : $$ NE(0)
+ 
+semaphoreTake - CONC.LOCK 1 : $1 : 1
+semaphoreTake - LOCK 1 : $1 : 1
+ 
+semaphoreGive - CONC.UNLOCK 1 : $1 : 1
+semaphoreGive - UNLOCK 1 : $1 : 1
+ 
+spinLockIsrTake - CONC.LOCK 1 : $1 : 1
+spinLockIsrTake - LOCK 1 : $1 : 1
+ 
+spinLockIsrGive - CONC.UNLOCK 1 : $1 : 1
+spinLockIsrGive - UNLOCK 1 : $1 : 1
+
+
+

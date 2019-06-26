@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Example file for option -function-behavior-specifications
+
+You can redefine your functions to emulate standard behaviors that Polyspace recognizes.
+
+When you call the function, its body is not verified. Instead:
+- The verification assumes the same return value as the standard function you replace it with.
+- The verification checks for the same issues it would check with the standard function.
+
+Use this option if the verification of your function body is imprecise and the software assumes full range for the return value. For instance, if your function  ‘my_sin’ returns full range, replace it with the standard ‘sin’ function. 
+
+Available standard functions are:
+- Many functions from math.h
+- Some memory-management functions from string.h
+- __ps_meminit : Polyspace-specific function that initialize a memory area.
+- __ps_lookup_table_clip : Polyspace-specific function that returns a value within the range of the input array.
+
+-->
+
+<functions>
+  
+  <function name="semaphoreTake" std="pthread_mutex_lock">
+    <!-- 
+      standard function "pthread_mutex_lock" from <pthread.h>:
+      expected return: int
+      expected arguments: pointer to lock identifer
+    -->
+    <mapping std_arg="1" arg="1"></mapping>
+  </function>
+  <function name="semaphoreGive" std="pthread_mutex_unlock">
+    <!-- 
+      standard function "pthread_mutex_unlock" from <pthread.h>:
+      expected return: int
+      expected arguments: pointer to lock identifer
+    -->
+  </function>
+
+  
+
+ </functions>
