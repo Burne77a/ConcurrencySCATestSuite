@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{0DD5E5BF-45AE-4AA2-BD97-D44030D2F74B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SCATestBench</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\Helpers;.\SharedData;.\RTOS;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\SharedData;.\Helpers;.\RTOS;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\CActorInterruptInterrupt.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD1\CComplexityAiiCCVcCCD1Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD1\CComplexityAiiCCVcCCD1Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAiiCCVcCCD3Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAiiCCVcCCD3Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAiiCCVcCCD3Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAiiCCVcCCD3Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl4.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl5.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl6.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl7.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD1\CComplexityAiiCCViCCD1Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD1\CComplexityAiiCCViCCD1Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD3\CComplexityAiiCCViCCD3Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD3\CComplexityAiiCCViCCD3Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD3\CComplexityAiiCCViCCD3Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD3\CComplexityAiiCCViCCD3Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl4.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl5.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl6.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl7.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\MethodDepth\CComplexityAiiMD1.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\MethodDepth\CComplexityAiiMD3.h" />
+    <ClInclude Include="ConcurrencyDefects\InterruptInterrupt\Complexities\MethodDepth\CComplexityAiiMD7.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\CActorThreadInterrupt.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD1\CComplexityAtiCCVcCCD1Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD1\CComplexityAtiCCVcCCD1Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAtiCCVcCCD3Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAtiCCVcCCD3Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAtiCCVcCCD3Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAtiCCVcCCD3Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl4.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl5.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl6.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl7.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD1\CComplexityAtiCCViCCD1Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD1\CComplexityAtiCCViCCD1Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD3\CComplexityAtiCCViCCD3Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD3\CComplexityAtiCCViCCD3Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD3\CComplexityAtiCCViCCD3Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD3\CComplexityAtiCCViCCD3Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl4.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl5.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl6.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl7.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\MethodDepth\CComplexityAtiMD1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\MethodDepth\CComplexityAtiMD3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadInterrupt\Complexities\MethodDepth\CComplexityAtiMD7.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\CActorThreadThread.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD1\CComplexityAttCCVcCCD1Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD1\CComplexityAttCCVcCCD1Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD3\CComplexityAttCCVcCCD3Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD3\CComplexityAttCCVcCCD3Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD3\CComplexityAttCCVcCCD3Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD3\CComplexityAttCCVcCCD3Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl4.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl5.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl6.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl7.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD1\CComplexityAttCCViCCD1Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD1\CComplexityAttCCViCCD1Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD3\CComplexityAttCCViCCD3Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD3\CComplexityAttCCViCCD3Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD3\CComplexityAttCCViCCD3Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD3\CComplexityAttCCViCCD3Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl0.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl2.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl4.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl5.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl6.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl7.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\MethodDepth\CComplexityAttMD1.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\MethodDepth\CComplexityAttMD3.h" />
+    <ClInclude Include="ConcurrencyDefects\ThreadThread\Complexities\MethodDepth\CComplexityAttMD7.h" />
+    <ClInclude Include="Helpers\CSemaphoreGuard.h" />
+    <ClInclude Include="Helpers\CSpinlockGuard.h" />
+    <ClInclude Include="RTOS\DummyRTOS.h" />
+    <ClInclude Include="SharedData\SharedData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\CActorInterruptInterrupt.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD1\CComplexityAiiCCVcCCD1Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD1\CComplexityAiiCCVcCCD1Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAiiCCVcCCD3Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAiiCCVcCCD3Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAiiCCVcCCD3Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAiiCCVcCCD3Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl4.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl5.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl6.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAiiCCVcCCD7Lvl7.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD1\CComplexityAiiCCViCCD1Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD1\CComplexityAiiCCViCCD1Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD3\CComplexityAiiCCViCCD3Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD3\CComplexityAiiCCViCCD3Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD3\CComplexityAiiCCViCCD3Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD3\CComplexityAiiCCViCCD3Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl4.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl5.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl6.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\Composition\CCViCCD7\CComplexityAiiCCViCCD7Lvl7.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\MethodDepth\CComplexityAiiMD1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\MethodDepth\CComplexityAiiMD3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\InterruptInterrupt\Complexities\MethodDepth\CComplexityAiiMD7.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\CActorThreadInterrupt.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD1\CComplexityAtiCCVcCCD1Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD1\CComplexityAtiCCVcCCD1Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAtiCCVcCCD3Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAtiCCVcCCD3Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAtiCCVcCCD3Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD3\CComplexityAtiCCVcCCD3Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl4.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl5.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl6.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCVcCCD7\CComplexityAtiCCVcCCD7Lvl7.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD1\CComplexityAtiCCViCCD1Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD1\CComplexityAtiCCViCCD1Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD3\CComplexityAtiCCViCCD3Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD3\CComplexityAtiCCViCCD3Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD3\CComplexityAtiCCViCCD3Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD3\CComplexityAtiCCViCCD3Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl4.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl5.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl6.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\Composition\CCViCCD7\CComplexityAtiCCViCCD7Lvl7.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\MethodDepth\CComplexityAtiMD1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\MethodDepth\CComplexityAtiMD3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadInterrupt\Complexities\MethodDepth\CComplexityAtiMD7.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\CActorThreadThread.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD1\CComplexityAttCCVcCCD1Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD1\CComplexityAttCCVcCCD1Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD3\CComplexityAttCCVcCCD3Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD3\CComplexityAttCCVcCCD3Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD3\CComplexityAttCCVcCCD3Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD3\CComplexityAttCCVcCCD3Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl4.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl5.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl6.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCVcCCD7\CComplexityAttCCVcCCD7Lvl7.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD1\CComplexityAttCCViCCD1Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD1\CComplexityAttCCViCCD1Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD3\CComplexityAttCCViCCD3Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD3\CComplexityAttCCViCCD3Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD3\CComplexityAttCCViCCD3Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD3\CComplexityAttCCViCCD3Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl0.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl2.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl4.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl5.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl6.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\Composition\CCViCCD7\CComplexityAttCCViCCD7Lvl7.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\MethodDepth\CComplexityAttMD1.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\MethodDepth\CComplexityAttMD3.cpp" />
+    <ClCompile Include="ConcurrencyDefects\ThreadThread\Complexities\MethodDepth\CComplexityAttMD7.cpp" />
+    <ClCompile Include="Helpers\CSemaphoreGuard.cpp" />
+    <ClCompile Include="RTOS\DummyRTOSModel.cpp" />
+    <ClCompile Include="SCA Test Bench.cpp" />
+    <ClCompile Include="SharedData\SharedData.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

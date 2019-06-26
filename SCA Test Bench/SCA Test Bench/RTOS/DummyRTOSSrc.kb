@@ -1,0 +1,27 @@
+# Name	Key	Class	Descr
+semaphoreCreateBinary - ACQUIRE Handle : 1 : $$ : $$ NE(0)
+
+#semaphoreTake - RET env:EQ(0)
+#semaphoreTake - NPD 1
+#semaphoreTake - DMEM ,MRF,1
+semaphoreTake - CONC.LOCK 1 : *$1 : $$ EQ(0)
+
+
+semaphoreGive - RET env:EQ(0)
+semaphoreGive - NPD 1
+semaphoreGive - DMEM ,MRF,1
+semaphoreGive - CONC.UNLOCK 1 : *$1 : 1
+
+
+spinLockIsrTake - RET env:EQ(0)
+spinLockIsrTake - NPD 1
+spinLockIsrTake - DMEM ,MRF,1
+spinLockIsrTake - CONC.LOCK 1 : *$1 : $$ EQ(0)
+
+
+spinLockIsrGive - RET env:EQ(0)
+spinLockIsrGive - NPD 1
+spinLockIsrGive - DMEM ,MRF,1
+spinLockIsrGive- CONC.UNLOCK 1 : *$1 : 1
+
+
