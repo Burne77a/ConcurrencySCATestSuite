@@ -7,24 +7,24 @@ The filenames and directory names match the complexity levels described in the p
 systems using static code analysis: an evaluation.
 
 ```
-\---SCA Test Bench						Root directory.
-    +---Configurations					Configuration files for the evaluated tools. 
+\---SCA Test Bench									Root directory.
+    +---Configurations								Configuration files for the evaluated tools. 
     |   +---Codesonar
     |   +---Klocwork
     |   +---Parasoft
     |   \---PolySpace
-    \---SCA Test Bench					Root directory for the test bench. 
+    \---SCA Test Bench								Root directory for the test bench. 
         +---ConcurrencyDefects
-        |   +---InterruptInterrupt		One directory per actor combination. This is the interrupt-interrupt combination.
-        |   |   \---Complexities		Each actor combination, contain the different complexities levels. 
-        |   |       +---Composition	 Composition based complexities. 
-        |   |       |   +---CCVcCCD1	Composition based complexity, concrete composition of level 1. 
-        |   |       |   +---CCVcCCD3	Concrete composition of level 3. 
-        |   |       |   +---CCVcCCD7	Concrete composition of level 7. 
-        |   |       |   +---CCViCCD1	Interface composition of level 1. 
-        |   |       |   +---CCViCCD3	Interface composition of level 3. 
-        |   |       |   \---CCViCCD7	Interface composition of level 7.
-        |   |       \---MethodDepth	 Method depth complexities. 
+        |   +---InterruptInterrupt					One directory per actor combination. This is the interrupt - interrupt actor combination.
+        |   |   \---Complexities					Each actor combination, contain the different complexities levels. 
+        |   |       +---Composition					Composition based complexities. 
+        |   |       |   +---CCVcCCD1				Composition based complexity. With concrete composition of level 1. 
+        |   |       |   +---CCVcCCD3				Concrete composition of level 3. 
+        |   |       |   +---CCVcCCD7				Concrete composition of level 7. 
+        |   |       |   +---CCViCCD1				Interface composition of level 1. 
+        |   |       |   +---CCViCCD3				Interface composition of level 3. 
+        |   |       |   \---CCViCCD7				Interface composition of level 7.
+        |   |       \---MethodDepth					Method depth complexities. 
         |   +---ThreadInterrupt
         |   |   \---Complexities
         |   |       +---Composition
